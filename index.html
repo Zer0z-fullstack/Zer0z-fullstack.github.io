@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Você me ama?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 2px solid #000;
+        }
+        #no {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Você me ama?</h1>
+        <button id="yes">Sim</button>
+        <button id="no">Não</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById("no");
+
+        noButton.addEventListener("mouseover", () => {
+            const offsetX = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const offsetY = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.left = offsetX + "px";
+            noButton.style.top = offsetY + "px";
+        });
+
+        document.getElementById("yes").addEventListener("click", () => {
+            alert("Eu também te amo!");
+        });
+    </script>
+</body>
+</html>
